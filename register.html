@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="final1.js"></script>
+    <title>Register | GPA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Poppins:wght@300&family=Satisfy&display=swap');
+
+
+        .signup-form {
+            text-align: center;
+            margin-left: -66px;
+        }
+
+        /* .header {
+            align-items: center;
+            background: linear-gradient(to right, #04314b9c 0%, #00bdec9c 50%, #0a444e9c 99%);
+            text-align: center;
+            color: #f8faf9;
+            margin-left: 20px;
+            margin-right: 20px;
+        } */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-image: url('1.jpg'); */
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 16px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            height: 60px;
+            background: linear-gradient(to right, #00a2ff9c 0%, #00bdec9c 50%, #00abc99c 99%);
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom: 3px solid black;
+        }
+
+
+        input {
+            font-size: 17px;
+            box-sizing: border-box;
+            height: 34px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #333333;
+            text-align: left;
+            border-top: 1px solid #a7a7a7;
+            border-radius: 4px;
+            background: white;
+            outline: none;
+            width: 28%;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #d9d9d9;
+        }
+
+        .info {
+            color: rgba(4, 45, 83, 0.699);
+            text-shadow: 0.5px 0.5px 1px black;
+            text-align: center;
+        }
+
+        .instruct {
+            padding: 10px 150px;
+            /* color: whitesmoke; */
+            color: rgb(0, 0, 0);
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0 12px 0;
+            /* background: linear-gradient(to right, #5f5f5f9c 0%, #8b8b8b9c 50%, #c2c2c29c 99%); */
+            background: rgba(107, 109, 110, 0.529);
+            border-radius: 5px;
+            margin-left: 36%;
+            margin-right: 34.5%;
+        }
+
+        .but {
+            margin: 6px;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            padding: 3px;
+        }
+
+        img {
+            border-radius: 5px;
+            margin: 1px;
+        }
+
+        button {
+            margin-top: 3px;
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            transition-duration: 0.4s;
+        }
+
+        button:hover {
+            transform: scale(1.25);
+            border-radius: 10px;
+            cursor: pointer;
+            transition-duration: 0.1s;
+            background-color: #aaaaaa9c;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+
+        button:active {
+            content: "";
+            position: relative;
+            border-radius: 4em;
+            opacity: 0;
+            transition: 0s;
+            background-color: black;
+        }
+
+        fieldset {
+            align-self: center;
+            margin: 15px 0;
+            padding: 25px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            width: 300px;
+            background: linear-gradient(to right, #00a2ff9c 0%, #00bdec9c 50%, #00abc99c 99%);
+            border: none;
+        }
+
+        .lbl {
+            color: #f3e853;
+            font-size: 17px;
+            font-weight: bold;
+            text-shadow: 0.3px 0.3px 0.8px black;
+            text-align: left;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+
+
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+
+        .con {
+            width: 150px;
+            height: 40px;
+            margin: 10px 30px;
+            font-family: inherit;
+            font-size: 22px;
+            background: linear-gradient(to right, #00a2ff9c 0%, #00bdec9c 50%, #00abc99c 99%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Register</h1>
+    </nav>
+    <div class="instruct">
+        <h5>Please select a sequence of images shown below. To form a password, select atleast 4 images. After selecting
+            your images, Press Sign Up to continue.</h5>
+    </div>
+    <form class="signup-form" autocomplete="off">
+        <label><b>username:</b></label>
+        <input type="email" id="email" class="form-input" placeholder="enter your email" required="required"
+            autocomplete="off" style="margin-bottom: 10px;"></br>
+        <label><b>password:</b></label>
+        <input id="password" autocomplete="off" placeholder="Select Images for password" readonly="readonly" type="password" /></br>
+    </form>
+    <div class="grid">
+        <div class="grid1">
+            <div id="a0" class="but"></div>
+            <div id="a1" class="but"></div>
+            <div id="a2" class="but"></div>
+        </div>
+        <div class="grid2">
+            <div id="b0" class="but"></div>
+            <div id="b1" class="but"></div>
+            <div id="b2" class="but"></div>
+        </div>
+        <div class="grid3">
+            <div id="c0" class="but"></div>
+            <div id="c1" class="but"></div>
+            <div id="c2" class="but"></div>
+        </div>
+    </div>
+    <center>
+        <a href="login.html" class="info">
+            Already have an account? Sign In.
+        </a>
+        <a href="home.html" class="info">
+            Return to Home.
+        </a>
+    </center>
+    
+    <div class="controls">
+        <button onclick="reset()" class="con">Reset</button>
+        <button onclick="signUp()" class="con">Sign Up</button>
+    </div>
+</body>

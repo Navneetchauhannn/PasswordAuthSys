@@ -1,7 +1,5 @@
-# PasswordAuthSys
+# Graphical Password Authentication System
 # smart india hackathon
-
-Graphical Password Authentication System
 
 Passwords are universal today on any platform, on possibly any website. But to remember so difficult passwords and that too on numerous websites seems daunting and therefore you can devise a project illustrating graphical password strategy.
 

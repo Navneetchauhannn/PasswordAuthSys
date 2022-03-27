@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="final1.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Poppins:wght@300&family=Satisfy&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            margin-block-start: 0;
+            position: relative;
+            width: 100%;
+            /* background-color: black; */
+            top: 0px;
+            background: linear-gradient(to right, #0c496d9c 0%, #00bdec9c 50%, #0f5c699c 99%);
+            color: rgba(224, 248, 11, 0.945);
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            border-bottom: 3px solid black;
+            text-shadow: 0.8px 0.8px 1px black;
+            padding-top: 7px;
+            height: 60px;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        button {
+            margin-top: 3px;
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            transition-duration: 0.4s;
+        }
+
+        button:hover {
+            transform: scale(1.25);
+            border-radius: 10px;
+            cursor: pointer;
+            transition-duration: 0.1s;
+            background-color: #aaaaaa9c;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+
+        button:active {
+            content: "";
+            position: relative;
+            border-radius: 4em;
+            opacity: 0;
+            transition: 0s;
+            background-color: black;
+        }
+
+        .con {
+            width: 150px;
+            height: 40px;
+            margin: 10px 30px;
+            font-family: inherit;
+            font-size: 22px;
+            background: linear-gradient(to right, #00a2ff9c 0%, #00bdec9c 50%, #00abc99c 99%);
+        }
+    </style>
+    <title>Details | GPA</title>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Welcome</h2>
+        <div>
+            <h3 id="fname">Name</h3>
+            <h3 id="lname">Surname</h3>
+        </div>
+        <button onclick="signOut()" class="con">Signout</button>
+    </div>
+</body>
+
+</html>

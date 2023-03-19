@@ -1,5 +1,5 @@
 # Graphical Password Authentication System
-# Smart India Hackathon | AICTE(All Inidia Council for Technical Education)
+# Smart India Hackathon | PS by AICTE
 
 Passwords are universal today on any platform, on possibly any website. But to remember so difficult passwords and that too on numerous websites seems daunting and therefore we are devise a project illustrating graphical password strategy.
 
